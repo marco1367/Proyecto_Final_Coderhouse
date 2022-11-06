@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* contenedor principal */
+.welcome-container-principal {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url('../images/welcome_fondo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+/* contenedor title */
+.welcome-container-principal .welcome-container-title {
+    width: auto;
+    height: auto;
+    margin: 25px 0px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.welcome-container-principal .welcome-container-title .welcome-title {
+    position: relative;
+    width: auto;
+    height: auto;
+}
+.welcome-container-principal .welcome-container-title h1 {
+    position: relative;
+    font-size: 50px;
+    z-index: 1;
+}
+.welcome-container-principal .welcome-container-title .subrayado {
+    width: 90%;
+    background-color: yellow;
+    height: 25px;
+    position: relative;
+    top: -24px;
+    left: 5%;
+    z-index: 0;
+}
+.welcome-container-principal .welcome-container-title .wolcome-gotoblog {
+    background-color: #B1D7EA;
+    margin-top: 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 63px;
+    width: 123px;
+}
+.welcome-container-principal .welcome-container-title .wolcome-gotoblog:hover {
+    background-color: #58b6e5;
+}
+.welcome-container-principal .welcome-container-title .wolcome-gotoblog a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* contenedor contenido */
+.welcome-container-principal .welcome-container-content {
+    width: auto;
+    height: auto;
+    margin: 25px 0px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.welcome-container-content-title {
+    margin: 15px 0px;
+    font-size: 35px;
+}
+.welcome-autores-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.welcome-autores-container h2 {
+    margin: 10px 0px;
+}
+.welcome-autores-container ul li {
+    list-style: none;
+    font-size: 22px;
+}
