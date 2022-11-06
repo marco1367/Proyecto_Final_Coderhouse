@@ -68,7 +68,8 @@ def procesar_formulario_articulo(request):
         return render(request, "blog/formulario-articulo.html", context=contexto)
 
 
-
+def prueba(request):
+    return render(request, "blog/prueba.html")
 
 
 @login_required

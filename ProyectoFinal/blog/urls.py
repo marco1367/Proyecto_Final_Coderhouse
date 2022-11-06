@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.models import User
-from blog.views import (mostrar_inicio, procesar_formulario_autor, procesar_formulario_articulo, buscar_autor, AutorList, PaginasList, AutorDetalle, PaginaDetalle, AutorCreacion, PaginaCreacion, AutorUpdateView, PaginaUpdateView, AutorDelete, PaginaDelete,  MyLogin, MyLogout, register, editar_perfil, agregar_avatar, about_me)
+from blog.views import (mostrar_inicio, procesar_formulario_autor, procesar_formulario_articulo, buscar_autor, AutorList, PaginasList, AutorDetalle, PaginaDetalle, AutorCreacion, PaginaCreacion, AutorUpdateView, PaginaUpdateView, AutorDelete, PaginaDelete,  MyLogin, MyLogout, register, editar_perfil, agregar_avatar, about_me, prueba)
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,6 +28,7 @@ urlpatterns = [
     path("agregar-avatar/", agregar_avatar, name="AgregarAvatar"),
     path("", mostrar_inicio),
     path("about/", about_me , name="About"),
+    path("prueba", prueba, name="prueba")
     ] 
 
 if settings.DEBUG:
