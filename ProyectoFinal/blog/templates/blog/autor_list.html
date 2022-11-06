@@ -1,0 +1,46 @@
+<!--- creacion bloque herencia django -->
+{% extends "Blog/base.html" %}
+
+{% load static %}
+{% block contenidoQueCambia %}
+<head>
+    <title>Lista de autores</title>
+</head>
+
+<body>
+    
+    <h1>Lista completa autores</h1>
+
+    {% if object_list %}
+
+    <ul>
+        {% for autor in object_list %}
+
+        <li>
+            <p>Nombre: {{ autor.nombre }} 
+
+        <p> 
+            <a style="color:blue" href="{% url 'AutorDetail' autor.id %}">Ver</a>   
+            <a style="color:blue" href="{% url 'AutorUpdate' autor.id %}">Editar</a>   
+            <a style="color:blue" href="{% url 'AutorDelete' autor.id %}">Borrar</a>
+
+        </p>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+    {% else %}
+
+        <br>
+        <h3>No hay autores aún, puedes cargar alguno para que aparezca en esta lista.</h3>
+        
+    {% endif %}
+    
+
+    <a style="color: #1b6bf5 " class="navbar-brand" href="{% url 'AutorNew' %}">Crear nuevo autor</a>
+
+</body>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}

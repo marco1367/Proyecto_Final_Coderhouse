@@ -1,0 +1,23 @@
+<!--- creacion bloque herencia django -->
+{% extends "Blog/base.html" %}
+
+{% load static %}
+{% block contenidoQueCambia %}
+<head>
+    <title>Detalle Autor</title>
+</head>
+
+<body>
+
+    <p> 
+    Nombre del autor:   <span style="color:cyan ; font-weight:bold"> {{ autor.nombre }} </span><br>
+    Apellido del autor:   <span style="color:cyan ; font-weight:bold">{{ autor.apellido }}  </span><br>
+    Profesion del autor:    <span style="color:cyan ; font-weight:bold">{{ autor.profesion }}  </span><br>
+    </p>
+    
+    <a style="color:blue" href="{% url 'AutorList' %}">Todos los autores</a>
+    
+</body>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}

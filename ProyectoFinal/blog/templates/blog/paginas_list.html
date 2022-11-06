@@ -1,0 +1,50 @@
+<!--- creacion bloque herencia django -->
+{% extends "Blog/base.html" %}
+
+{% load static %}
+{% block contenidoQueCambia %}
+<head>
+    <title>Listado de páginas</title>
+</head>
+
+<body>
+
+    <h1>Lista completa de páginas</h1>
+
+    {% if object_list %}
+
+    <ul>
+        {% for pagina in object_list %}
+
+        <li>
+
+            <p>
+                Titulo: {{ pagina.titulo }}  <br>
+                Autor: {{ pagina.autor }}
+        
+    
+        
+        <p> 
+            <a style="color:blue" href="{% url 'PaginaDetail' pagina.id %}">Ver</a>    
+            <a style="color:blue" href="{% url 'PaginaUpdate' pagina.id %}">Editar</a>   
+            <a style="color:blue" href="{% url 'PaginaDelete' pagina.id %}">Borrar</a>   
+
+        </p>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+
+    <br>
+    <h3>No hay páginas aún, puedes cargar alguna para que aparezca en esta lista.</h3>
+    
+    {% endif %}
+
+
+    <a style="color: #1b6bf5 " class="navbar-brand" href="{% url 'PaginaNew' %}">Crear nueva pagina</a>
+
+</body>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}

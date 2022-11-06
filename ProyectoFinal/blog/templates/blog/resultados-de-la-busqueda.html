@@ -1,0 +1,27 @@
+<!--- creacion bloque herencia django -->
+{% extends "Blog/base.html" %}
+
+{% load static %}
+{% block contenidoQueCambia %}
+<head>
+    <title>Resultado de busqueda</title>
+</head>
+
+<body>
+
+    <h3>En base a su busqueda, como resultado se ha encontrado:</h1>
+    <ul>
+    {% for resultado in resultados %}
+
+        <li>{{resultado.titulo}} {{resultado.texto}} {{resultado.fecha}}
+            {{resultado.nombre}} {{resultado.apellido}} {{resultado.profesion}}
+        </li>
+
+    {% endfor %}
+    </ul>
+    
+</body>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}
+

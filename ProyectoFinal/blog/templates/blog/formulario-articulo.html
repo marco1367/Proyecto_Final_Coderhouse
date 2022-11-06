@@ -1,0 +1,32 @@
+<!--- creacion bloque herencia django -->
+{% extends "Blog/base.html" %}
+
+{% load static %}
+{% block contenidoQueCambia %}
+<head>
+    <title>Articulo</title>
+</head>
+
+<body>
+
+    
+</body>
+
+{% if formulario.errors %}
+    <p style="color: red;"> Error: alguno de los datos ingresados es incorrecto, revisar</p>    
+{% endif %}
+
+    <p>
+        Formulario articulo
+    </p>
+
+    <form action="" method="POST">{% csrf_token %}
+        <table>
+        {{ formulario.as_table }}
+        </table>
+        <input type="submit" value="Guardar modelo">
+    </form>
+
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}

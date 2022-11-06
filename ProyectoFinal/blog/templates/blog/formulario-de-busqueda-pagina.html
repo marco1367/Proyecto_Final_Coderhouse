@@ -1,0 +1,26 @@
+<!--- creacion bloque herencia django -->
+{% extends "Blog/base.html" %}
+
+{% load static %}
+{% block contenidoQueCambia %}
+<head>
+    <title>Busqueda de páginas </title>
+</head>
+
+<body>
+
+    <h3>
+        Busqueda por título de páginas.
+    </h3>
+    
+    <form action="/blog/buscar-pagina/" method="POST">{% csrf_token %}
+        <p><input type="text" name="titulo" id="titulo"></p>
+        <input type="submit" value="Buscar">
+    </form>
+    
+</body>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}
+
+

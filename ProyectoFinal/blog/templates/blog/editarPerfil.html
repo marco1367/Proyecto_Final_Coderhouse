@@ -1,0 +1,28 @@
+<!--- creacion bloque herencia django -->
+{% extends "Blog/base.html" %}
+
+{% load static %}
+{% block contenidoQueCambia %}
+<head>
+    <title>Editar Perfil</title>
+</head>
+
+<body>
+
+    Editar perfil de: <i>{{ user }}</i>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button type="submit" name="submit">Editar perfil</button>
+    </form>
+
+</body>
+
+<br><br>
+<h3><a style="color: aqua" href="{% url 'AgregarAvatar' %}">Agregar o Modificar el Avatar</a></h3>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}
+

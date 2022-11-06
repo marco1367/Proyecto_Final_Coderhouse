@@ -1,0 +1,26 @@
+<!--- creacion bloque herencia django -->
+{% extends "Blog/base.html" %}
+
+{% load static %}
+{% block contenidoQueCambia %}
+<head>
+    <title>Confirmar borrar</title>
+</head>
+
+<body>
+    <p>
+        <form method="post">{% csrf_token %}
+    </p>        
+     
+    <table>
+            La página: "{{ object }} será borrada, ¿Está seguro"?
+            
+        </table>
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}
+
