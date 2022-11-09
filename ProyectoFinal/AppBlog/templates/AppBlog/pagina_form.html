@@ -1,0 +1,33 @@
+<!--- creacion bloque herencia django -->
+{% extends "AppBlog/layout.html" %}
+
+
+{% load static %}
+
+
+{% block contenidoQueCambiaHeader %}
+    <title>Página</title>
+{% endblock %}
+
+
+{% block contenidoQueCambiaBody %}
+
+<body>
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        
+        <input type="submit" class="submit" value="Guardar">
+        <input type="reset" value="Reset">
+    </form>
+    
+</body>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}
+
+
+
+

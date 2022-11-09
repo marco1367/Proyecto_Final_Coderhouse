@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'AppBlog/css/styles.css' %}" rel="stylesheet">
+
+    <!-- bloque django para herencias en el header-->
+    {% block contenidoQueCambiaHeader %}
+        <title>Proyecto Final</title>
+    {% endblock %}
+</head>
+<body>
+
+    <nav class="navbar-container" >
+
+        <div class="navbar-icon-container" >
+            <a href="{% url 'Inicio' %}">Inicio</a>
+        </div>
+
+        <div class="navbar-menu-items-container" >
+            <ul>
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'PaginasList' %}">Páginas</a></li>
+                    <li><a href="{% url 'AutorList' %}">Autores</a></li>
+                    <li><a href="{% url 'buscar_autor' %}">Buscar autor</a></li>
+                    <li> <a href="{% url 'EditarPerfil' %}" >Perfil</a> </li>
+                    <li> <a href="{% url 'LogOut' %}" >LogOut</a> </li>
+                    {% if avatarUrl %}
+                        <img class="avatar-img" src="{{ avatarUrl }}" alt="avtar">
+                    {% endif %}
+                {% endif %}
+                {% if not request.user.is_authenticated %}
+                    <li> <a href="{% url 'Login' %}" >LogIn</a> </li>
+                    <li> <a href="{% url 'Register' %}" >Registrarse</a> </li>
+                {% endif %}
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- bloque django para herencias en el body-->
+    
+    <section>
+        {% block contenidoQueCambiaBody %}
+    
+        {% endblock %}
+    </section>
+
+</body>
+</html>

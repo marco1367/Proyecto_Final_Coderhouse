@@ -1,0 +1,34 @@
+<!--- creacion bloque herencia django -->
+{% extends "AppBlog/layout.html" %}
+
+{% load static %}
+
+
+
+{% block contenidoQueCambiaHeader %}
+    <title>Editar Perfil</title>
+{% endblock %}
+
+
+
+{% block contenidoQueCambiaBody %}
+
+    <div class="Edit-profile-container" >
+        <p>
+            Editar perfil de: <i>{{ user }}</i>
+        </p>
+    
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" name="submit">Editar perfil</button>
+        </form>
+    
+        <a href="#">Cambiar contraseña</a>
+
+        <br><br>
+        <a href="{% url 'AgregarAvatar' %}">Agregar o Modificar el Avatar</a>
+    </div>
+
+
+{% endblock %}

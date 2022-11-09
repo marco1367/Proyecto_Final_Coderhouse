@@ -1,0 +1,28 @@
+{% extends "AppBlog/layout.html" %}
+
+
+{% load static %}
+
+
+{% block contenidoQueCambiaHeader %}
+<title>Login Python/Django</title>
+<link type="text/css" href="{% static 'AppBlog/css/styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block contenidoQueCambiaBody %}
+<div class="login-form-template">
+    {% if mensaje %}
+    <div class="login-form-mensaje-error" >
+        <p>{{ mensaje }}</p>
+    </div>
+    {%endif%}
+
+    <form action="" method="POST" class="login-form" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="submit">Iniciar Sesión</button>
+    </form>
+
+</div>
+{% endblock %}

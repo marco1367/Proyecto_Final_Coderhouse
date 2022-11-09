@@ -1,0 +1,50 @@
+{% extends "AppBlog/layout.html" %}
+
+
+{% load static %}
+
+
+{% block contenidoQueCambiaHeader %}
+<title>Proyecto Final Python/Django</title>
+<!-- <link type="text/css" href="{% static 'AppBlog/css/styles.css' %}" rel="stylesheet"> -->
+{% endblock %}
+
+
+{% block contenidoQueCambiaBody %}
+<div class="welcome-container-principal">
+
+    <div class="welcome-container-title">
+        <div class="welcome-title">
+            {% if mensajeRegister %}
+                <h2> {{mensajeRegister}} </h2>
+                <h2> inicia sesión para ver el blog </h2>
+            {% endif %}
+
+            {% if request.user.is_authenticated %}
+                <h1>Bienvenido {{request.user.username}}</h1>
+            {% endif %}
+            {% if not request.user.is_authenticated %}
+                <h1>Bienvenido a nuestro Blog App</h1>
+            {% endif %}
+            <div class="subrayado"></div>
+        </div>
+        <div class="wolcome-gotoblog">
+            <a href="{% url 'About' %}">Sobre nosotros</a>
+        </div>
+    </div>
+
+    <div class="welcome-container-content">
+        <h2 class="welcome-container-content-title">
+            Proyecto Final Python / Django
+        </h2>
+        <div class="welcome-autores-container">
+            <h2>Autores del proyecto:</h2>
+            <ul>
+                <li>De Oto, Marcelo</li>
+                <li>Demaio, Marco Pablo</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
