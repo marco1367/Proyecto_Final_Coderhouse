@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppBlog',
+    'mensajes',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             f"/{BASE_DIR}/ProyectoFinal/templates/",
-            f"/{BASE_DIR}/AppBlog/templates/AppBlog/"
+            f"/{BASE_DIR}/AppBlog/templates/AppBlog/",
+            f"/{BASE_DIR}/mensajes/templates/mensajes/"
         ],
         'APP_DIRS': True,
         'OPTIONS': {
