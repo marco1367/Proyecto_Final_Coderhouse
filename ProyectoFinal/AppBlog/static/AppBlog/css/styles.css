@@ -5,10 +5,48 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ---------------- LAYOUT ----------------- */
+/* NavBar: */
+.navbar-container {
+    /* width: 100vw; */
+    height: 50px;
+    background-color: #08247f;
+    padding: 10px;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-icon-container a {
+    color: white;
+    text-decoration: none;
+} 
+.navbar-menu-items-container ul {
+    display: flex
+
+}
+.navbar-menu-items-container ul li {
+    list-style: none;
+}
+.navbar-menu-items-container ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.avatar-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* ---------------------------------------------- */
+
+
+/* -------------------- HOMEPAGE --------------------- */
 /* contenedor principal */
 .welcome-container-principal {
-    width: 100vw;
+    /* width: 100vw; */
     min-height: 100vh;
     background-image: url('../images/welcome_fondo.png');
     background-size: contain;
@@ -110,3 +148,4 @@
     list-style: none;
     font-size: 22px;
 }
+/* ------------------------------------------------ */

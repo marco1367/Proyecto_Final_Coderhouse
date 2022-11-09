@@ -1,0 +1,29 @@
+<!--- creacion bloque herencia django -->
+{% extends "AppBlog/layout.html" %}
+
+{% load static %}
+
+
+{% block contenidoQueCambiaHeader %}
+    <title>Detalles de página</title>
+{% endblock %}
+
+
+{% block contenidoQueCambiaBody %}
+
+    <p>
+        Titulo: {{ pagina.titulo }} <br>
+        Subtitulo: {{ pagina.subtitulo }} <br>
+        Articulo: {{ pagina.texto }} <br>
+        Fecha: {{ pagina.fecha }} <br> 
+        Autor: {{ pagina.autor }} <br>
+            foto: 
+            <img  src="{{ pagina.foto }}"/>
+        <br>
+        <a href="{% url 'PaginasList' %}">Todas las páginas</a>
+        
+    </p>
+
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}

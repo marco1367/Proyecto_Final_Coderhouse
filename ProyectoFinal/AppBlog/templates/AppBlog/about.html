@@ -1,0 +1,46 @@
+<!--- creacion bloque herencia django -->
+{% extends "AppBlog/layout.html" %}
+
+{% load static %}
+
+
+{% block contenidoQueCambiaHeader %}
+<title>Acerca de nosotros</title>
+{% endblock %}
+
+
+{% block contenidoQueCambiaBody %}
+
+<div class="about-page-container" >
+
+    <h1>
+        Sobre los creadores de este sitio web
+    </h1>
+    <h2>Nosotros</h2>
+
+    <div>
+        <h3>
+            Marco Dimaio
+        </h3>
+        <p>Estudiante avanzado de ingienieria industrial / full-stack developer in react, redux, nodejs y más</p>
+
+        <h3>
+            Marcelo De Oto
+        </h3>
+        <p>
+            Traductor Técnico-Cientifico / Estudiante de Ciberseguridad
+        </p>
+    </div>
+
+
+
+    <h2>Sobre este proyecto</h2>
+    <p>
+        Este fue un proyecto creado como trabajo final para el curso de Phyton de CoderHouse.
+        Se pedia que se cree un sitio web de creación de blogs con algunas funcionalidades especificas.
+    </p>
+
+</div>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}

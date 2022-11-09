@@ -1,0 +1,24 @@
+<!--- creacion bloque herencia django -->
+{% extends "AppBlog/layout.html" %}
+
+
+{% load static %}
+
+
+{% block contenidoQueCambiaHeader %}
+    <title>Creación Autor</title>
+{% endblock %}
+
+
+{% block contenidoQueCambiaBody %}
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <table>
+            {{ form.as_p }}
+        </table>
+    
+        <input type="submit" value="Guardar">
+        <input type="reset" value="Reset">
+    </form>
+{% endblock %} 

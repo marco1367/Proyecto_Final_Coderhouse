@@ -1,0 +1,28 @@
+<!--- creacion bloque herencia django -->
+{% extends "AppBlog/layout.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambiaHeader %}
+    <title>Busqueda de autores</title>  
+{% endblock %}
+
+
+{% block contenidoQueCambiaBody %}
+
+    <div class="autor-search-container" >
+
+        <h3>Busqueda por nombre de autor</h3>
+
+        <form action="/AppBlog/buscar-autor/" method="POST">
+            {% csrf_token %}
+            <p><input type="text" name="nombre" id="nombre"></p>
+            <input type="submit" value="Buscar">
+        </form>
+
+    </div>
+
+
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}

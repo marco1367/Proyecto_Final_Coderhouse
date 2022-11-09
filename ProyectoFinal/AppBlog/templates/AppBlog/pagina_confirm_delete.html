@@ -1,0 +1,30 @@
+<!--- creacion bloque herencia django -->
+{% extends "AppBlog/layout.html" %}
+
+{% load static %}
+
+
+{% block contenidoQueCambiaHeader %}
+    <title>Confirmar borrar</title>
+{% endblock %}
+
+
+
+{% block contenidoQueCambiaBody %}
+<div class="pagina-confirmdelete-container" >
+    <p>
+        <form method="post">{% csrf_token %}
+    </p>        
+     
+    <table>
+            La página: "{{ object }} será borrada, ¿Está seguro"?
+            
+        </table>
+        <input type="submit" value="Submit">
+
+    </form>
+</div>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}
+

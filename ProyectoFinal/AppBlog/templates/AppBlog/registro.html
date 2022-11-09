@@ -1,0 +1,20 @@
+<!--- creacion bloque herencia django -->
+{% extends "AppBlog/layout.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambiaHeader %}
+    <title>Registrarse</title>
+{% endblock %}
+
+
+{% block contenidoQueCambiaBody %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="submit">Registrarse</button>
+    </form>
+
+
+{% endblock %}

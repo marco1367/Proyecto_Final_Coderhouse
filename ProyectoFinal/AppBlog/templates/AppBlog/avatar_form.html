@@ -1,0 +1,27 @@
+<!--- creacion bloque herencia django -->
+{% extends "AppBlog/layout.html" %}
+
+{% load static %}
+
+
+{% block contenidoQueCambiaHeader %}
+    <title>Avatar</title>
+{% endblock %}
+
+
+{% block contenidoQueCambiaBody %}
+
+    <div class="avatar-form-container" >
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br><br>
+            <button type="submit" name="submit">Guardar avatar</button>
+        </form>
+    </div>
+
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}
+
+

@@ -1,0 +1,22 @@
+<!--- creacion bloque herencia django -->
+{% extends "AppBlog/layout.html" %}
+
+{% load static %}
+
+
+{% block contenidoQueCambiaHeader %}
+    <title>Detalle Autor</title>
+{% endblock %}
+
+
+{% block contenidoQueCambiaBody %}
+    <p> 
+        Nombre del autor: <span > {{ autor.nombre }} </span><br>
+        Apellido del autor: <span >{{ autor.apellido }}  </span><br>
+        Profesion del autor:  <span >{{ autor.profesion }}  </span><br>
+    </p>
+    
+    <a href="{% url 'AutorList' %}">Todos los autores</a>
+
+<!--- Fin de bloque del contenido que vamos a utilizar -->
+{% endblock %}
